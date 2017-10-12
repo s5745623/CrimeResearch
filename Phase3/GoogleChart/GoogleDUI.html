@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month-Year', 'Montgomery County-DUI'],
+          ['January-2016', 254],
+          ['February-2016', 261],
+          ['March-2016', 289],
+          ['April-2016', 337],
+	  ['May-2016', 312],
+	  ['June-2016', 235],
+	  ['July-2016', 261],
+	  ['August-2016', 266],
+	  ['September-2016', 235],
+	  ['October-2016', 273],
+          ['November-2016', 224]
+        ]);
+
+        var options = {
+          title: 'Montgomery County DUI',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+  </body>
+</html>
